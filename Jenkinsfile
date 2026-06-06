@@ -1,13 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Clonar repositorio') {
-            steps {
-                git 'https://github.com/esquivel-deyvid/techdelivery-app.git'
-            }
+       stage('Clonar repositorio') {
+    steps {
+        git branch: 'main', url: 'https://github.com/esquivel-deyvid/techdelivery-app.git'
+    }
         }
         stage('Instalar dependencias') {
             steps {
+                
                 sh 'npm install'
             }
         }
